@@ -1,4 +1,11 @@
+import NavBar from "../components/NavBar.js"; //import para añadir a NavBar
 import Search from "../components/Search";
-export default function Home() {
-  return <Search />;
+function Home() {
+  return (
+    <div className="w-full overflow-x-hidden overflow-y-hidden">
+      <NavBar />
+      <Search />
+    </div>
+  );
 }
+export default Home;
