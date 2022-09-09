@@ -1,17 +1,33 @@
+import Button from "../components/Button";
 
-function Card() {
+function Card({ name, image, address, phoneNumber, web, days, timetable }) {
   return (
-    <div className="flex flex-row w-3/6 h-48 pt-4 pr-3 bg-white scroll-p-1 shadow-md">
-      <div className="w-56">imagen</div>
-      <div className="w-full">
-        <h2><a href="#">Nombre Fundación</a></h2>
+    <div className="flex flex-col sm:flex-row w-full bg-white scroll-p-1 shadow-md rounded-lg overflow-hidden">
+      <div className="">
+        <img src={image} alt="imagen de fundación" />
+      </div>
+      <div className="w-full p-4">
+        <h2>
+          <a href="#">{name}</a>
+        </h2>
         <ul className="leading-loose">
-          <li>Dirección</li>
-          <li>Días y horarios</li>
+          <li>Dirección: {address}</li>
+          <li>Teléfono: {phoneNumber}</li>
+          <li>Días de atención: {days}</li>
+          <li>Horario: {timetable}</li>
         </ul>
-        <div className="grid grid-cols-2 mt-8">
-          <div className="">Botón Tlf</div>
-          <div className=""><a href="#">Enlace pág web</a></div>
+
+        <div className="flex gap-4 mt-6">
+          <Button ariaLabel="Telefono">
+            <a href={`tel:${phoneNumber}`}>Llamar</a>
+          </Button>
+          <div className="">
+            <Button ariaLabel="sitio web" variant="empty">
+              <a href={web} target="_blank">
+                Sitio web
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </div>
