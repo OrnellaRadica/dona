@@ -10,6 +10,7 @@ const Button = ({
   loading,
   disabled,
   ariaLabel,
+  hasLink,
 }) => {
   const classesButton = classnames({
     "inline-flex items-center rounded-md focus:outline-none focus:border-accent-blue focus:shadow-outline-indigo transition ease-in-out duration-150": true,
@@ -20,8 +21,9 @@ const Button = ({
     "bg-white font-normal border border-gray-200 hover:border-gray-300 hover:bg-gray-100":
       variant === "empty",
 
-    "px-2 md:px-6 py-2 text-lg leading-6": size === "normal",
-    "px-2 md:px-4 py-1 text-sm leading-6": size === "small",
+    "px-2 md:px-6 py-2 text-lg leading-6": size === "normal" && !hasLink,
+    "px-2 md:px-4 py-1 text-sm leading-6": size === "small" && !hasLink,
+    "[&>a]:p-2 [&>a]:md:px-6  text-lg leading-6": hasLink,
     "w-full": isFullWidth,
     "opacity-50 cursor-not-allowed": disabled,
   });
