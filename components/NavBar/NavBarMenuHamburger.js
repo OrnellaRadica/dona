@@ -2,9 +2,6 @@ import React from "react";
 import classnames from "classnames";
 
 function NavBarMenuHamburger({ open, handleClick }) {
-  {
-    /* CONSTANTES */
-  }
   const menuIcon = classnames("block w-8 h-1 bg-black");
 
   return !open ? (

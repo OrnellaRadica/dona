@@ -1,6 +1,6 @@
-import NavBar from "../components/NavBar";
-import Card from "../components/Card";
-import data from "../data.json";
+import NavBar from "../../components/NavBar/NavBar";
+import Card from "../../components/Card";
+import data from "../../data.json";
 
 function Page({ category, institutions }) {
   return (
@@ -13,6 +13,7 @@ function Page({ category, institutions }) {
           <Card
             key={institution.name}
             name={institution.name}
+            slug={institution.slug}
             image={institution.image}
             address={institution.address}
             phoneNumber={institution.phoneNumber}
@@ -30,8 +31,13 @@ export default Page;
 
 export const getStaticPaths = () => {
   return {
-    paths: ["/ropa", "/juguetes", "/alimentos", "/muebles"],
-    fallback: true,
+    paths: [
+      "/category/ropa",
+      "/category/juguetes",
+      "/category/alimentos",
+      "/category/muebles",
+    ],
+    fallback: false,
   };
 };
 export const getStaticProps = ({ params }) => {
@@ -39,7 +45,6 @@ export const getStaticProps = ({ params }) => {
   const institutions = data.filter((institution) =>
     institution.categories.includes(category)
   );
-  // TODO: Make a query to the BE and retrieve the institutions related to this category
   return {
     props: {
       category,

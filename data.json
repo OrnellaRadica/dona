@@ -1,6 +1,7 @@
 [
   {
     "name": "Ejemplo 1",
+    "slug": "ejemplo-1",
     "image": "https://www.busquetsgalvez.com/web/wp-content/uploads/2016/06/Via-Laietana-12.jpg",
     "address": "Carrer Llastic 2, Barcelona",
     "phoneNumber": "123456789",
@@ -11,6 +12,7 @@
   },
   {
     "name": "Ejemplo 2",
+    "slug": "ejemplo-2",
     "image": "https://www.busquetsgalvez.com/web/wp-content/uploads/2016/06/Via-Laietana-12.jpg",
     "address": "Carrer Llastic 2",
     "phoneNumber": "123456789",
@@ -21,6 +23,7 @@
   },
   {
     "name": "Ejemplo 3",
+    "slug": "ejemplo-3",
     "image": "https://www.busquetsgalvez.com/web/wp-content/uploads/2016/06/Via-Laietana-12.jpg",
     "address": "Carrer Llastic 2",
     "phoneNumber": "123456789",
