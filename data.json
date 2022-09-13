@@ -8,7 +8,8 @@
     "web": "http://google.com",
     "days": "De Lunes a Viernes",
     "timetable": "9 a 18 hs",
-    "categories": ["ropa", "juguetes"]
+    "categories": ["ropa", "juguetes"],
+    "information": "Fundación Esplai Ciudadanía Comprometida es una entidad sin ánimo de lucro que desarrolla proyectos y programas para promover el empoderamiento ciudadano desde la perspectiva de los derechos, la inclusión y la transformación social mediante el trabajo en red, la acción socioeducativa y la inclusión en el ámbito de las TIC."
   },
   {
     "name": "Ejemplo 2",
