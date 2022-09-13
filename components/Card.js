@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Button from "../components/Button";
+import Image from "next/image";
 
 function Card({
   name,
@@ -13,9 +14,17 @@ function Card({
 }) {
   return (
     <div className="flex flex-col sm:flex-row w-full bg-white scroll-p-1 shadow-md rounded-lg overflow-hidden">
-      <div className="">
-        <img src={image} alt="imagen de fundación" />
-      </div>
+      
+      <div className="w-full">
+       <Image
+          width="100%"
+          height="100%"
+          objectFit="cover"
+          layout="responsive"
+          src={image}
+          alt="Imagen de la institución"
+        /> 
+  </div>
       <div className="w-full p-4">
         <h2 className="uppercase underline">
           <Link href={`/institution/${slug}`}>
@@ -35,7 +44,7 @@ function Card({
           </Button>
           <div className="">
             <Button ariaLabel="sitio web" variant="empty" hasLink>
-              <a href={web} target="_blank">
+              <a href={web} target="_blank" rel="noreferrer">
                 Sitio web
               </a>
             </Button>
