@@ -36,7 +36,6 @@ function Institution({ institutionData }) {
       </button>
       <div className="flex flex-col sm:flex-row p-4">
         <div className="basis-6/12 w-full">
-          *
           <Image
             width="100%"
             height="100%"

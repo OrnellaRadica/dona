@@ -16,12 +16,13 @@ function Card({
 }) {
   return (
     <div className="flex flex-col sm:flex-row w-full bg-white scroll-p-1 shadow-md rounded-lg overflow-hidden">
-      <div className="w-full">
+      <div className="w-full sm:max-h-[300px]">
         <Image
           width="100%"
           height="100%"
           objectFit="cover"
           layout="responsive"
+          src={image}
         />
       </div>
       <div className="w-full p-4 flex flex-col justify-between gap-4">
