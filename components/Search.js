@@ -9,12 +9,16 @@ function Search() {
   const router = useRouter();
   const [direction, setDirection] = useState();
 
-  console.log("direction", direction);
   const handlePlaceSelected = (place) => {
     const lat = place.geometry.location.lat();
     const lng = place.geometry.location.lng();
-    setDirection({ lat, lng });
-    console.log("setdirection", direction);
+    const route = place.address_components.find((a) =>
+      a.types.includes("route")
+    )?.long_name;
+    const street_number = place.address_components.find((a) =>
+      a.types.includes("street_number")
+    )?.long_name;
+    setDirection({ lat, lng, route, street_number });
   };
 
   return (
@@ -28,7 +32,6 @@ function Search() {
 
       <form
         onSubmit={(e) => {
-          console.log("e", e);
           e.preventDefault();
           router.push({ pathname: "/list", query: direction });
           // TODO: Do the search and redirect to the correct page.

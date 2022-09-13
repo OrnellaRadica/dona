@@ -4,14 +4,14 @@ import data from "../../data.json";
 
 function Page({ category, institutions }) {
   return (
-    <div className="max-w-[1400px] ml-auto mr-auto">
+    <div className="max-w-[1400px] ml-auto mr-auto flex flex-col justify-center items-center">
       <div className="w-full overflow-x-hidden overflow-y-hidden">
         <NavBar />
       </div>
-      <div className="w-full px-4 md:px-12 md:py-6 flex flex-col gap-4">
+      <div className="w-full max-w-[1000px] px-4 md:px-12 md:py-6 flex flex-col gap-4">
         {institutions?.map((institution) => (
           <Card
-            key={institution.name}
+            key={category + institution.key}
             name={institution.name}
             slug={institution.slug}
             image={institution.image}
@@ -20,6 +20,7 @@ function Page({ category, institutions }) {
             web={institution.web}
             days={institution.days}
             timetable={institution.timetable}
+            categories={institution.categories}
           />
         ))}
       </div>
@@ -28,6 +29,10 @@ function Page({ category, institutions }) {
 }
 
 export default Page;
+
+function createRandomKey() {
+  return Math.random().toString(36).substring(2) + Date.now().toString(36);
+}
 
 export const getStaticPaths = () => {
   return {
@@ -48,7 +53,7 @@ export const getStaticProps = ({ params }) => {
   return {
     props: {
       category,
-      institutions,
+      institutions: institutions.map((i) => ({ ...i, key: createRandomKey() })),
     },
   };
 };

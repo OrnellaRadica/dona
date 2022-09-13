@@ -2,7 +2,6 @@ import NavBar from "../../components/NavBar/NavBar";
 import data from "../../data.json";
 
 function Institution({ institutionData }) {
-  console.log("institutionData", institutionData);
   return (
     <div className="max-w-[1400px] ml-auto mr-auto">
       <div className="w-full overflow-x-hidden overflow-y-hidden">
@@ -31,7 +30,7 @@ export const getStaticPaths = () => {
   const institutionUrls = data.map(
     (institution) => `/institution/${institution.slug}`
   );
-  console.log("institutionUrls", institutionUrls);
+
   return {
     paths: institutionUrls,
     fallback: false,
