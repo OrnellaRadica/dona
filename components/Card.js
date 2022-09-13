@@ -15,11 +15,9 @@ function Card({
   categories,
 }) {
   return (
-    <div className="flex flex-col sm:flex-row w-full sm:max-h-[300px] bg-white scroll-p-1 shadow-md rounded-lg overflow-hidden">
+    <div className="flex flex-col sm:flex-row w-full bg-white scroll-p-1 shadow-md rounded-lg overflow-hidden">
       <div className="w-full">
         <Image
-          src={image}
-          alt="imagen de fundación"
           width="100%"
           height="100%"
           objectFit="cover"
@@ -52,7 +50,7 @@ function Card({
           </Button>
           <div className="">
             <Button ariaLabel="sitio web" variant="empty" hasLink>
-              <a href={web} target="_blank">
+              <a href={web} target="_blank" rel="noreferrer">
                 Sitio web
               </a>
             </Button>

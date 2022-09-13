@@ -9,3 +9,9 @@ module.exports = {
     domains: ["www.busquetsgalvez.com"],
   },
 };
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> origin/main

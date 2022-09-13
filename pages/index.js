@@ -1,4 +1,4 @@
-import NavBar from "../components/Navbar/NavBar.js";
+import NavBar from "../components/NavBar/NavBar";
 import Search from "../components/Search";
 import classnames from "classnames";
 import CategoriesBlock from "../components/CategoriesBlock.js";

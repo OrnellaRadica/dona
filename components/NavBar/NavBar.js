@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
-import NavBarList from "./NavBarList";
-import NavBarMenuHamburger from "./NavBarMenuHamburger";
+import NavBarList from "../NavBar/NavBarList";
+import NavBarMenuHamburger from "../NavBar/NavBarMenuHamburger";
 
 function navBar() {
   const [open, setOpen] = useState(false);
