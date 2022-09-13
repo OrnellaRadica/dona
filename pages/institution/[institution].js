@@ -81,7 +81,7 @@ export const getStaticPaths = () => {
   const institutionUrls = data.map(
     (institution) => `/institution/${institution.slug}`
   );
-  console.log("institutionUrls", institutionUrls);
+
   return {
     paths: institutionUrls,
     fallback: false,
@@ -102,5 +102,4 @@ export const getStaticProps = ({ params }) => {
       institutionData,
     },
   };
-  
 };

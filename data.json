@@ -9,7 +9,14 @@
     "days": "De Lunes a Viernes",
     "timetable": "9 a 18 hs",
     "categories": ["ropa", "juguetes"],
+<<<<<<< HEAD
+    "direction": {
+      "lat": 41.3839762,
+      "lng": 2.1291988
+    }
+=======
     "information": "Fundación Esplai Ciudadanía Comprometida es una entidad sin ánimo de lucro que desarrolla proyectos y programas para promover el empoderamiento ciudadano desde la perspectiva de los derechos, la inclusión y la transformación social mediante el trabajo en red, la acción socioeducativa y la inclusión en el ámbito de las TIC."
+>>>>>>> origin/main
   },
   {
     "name": "Ejemplo 2",
@@ -20,7 +27,11 @@
     "web": "http://google.com",
     "days": "De Lunes a Viernes",
     "timetable": "9 a 18 hs",
-    "categories": ["ropa", "juguetes", "muebles"]
+    "categories": ["ropa", "juguetes", "muebles"],
+    "direction": {
+      "lat": 41.3839762,
+      "lng": 2.1291988
+    }
   },
   {
     "name": "Ejemplo 3",
@@ -30,6 +41,101 @@
     "phoneNumber": "123456789",
     "days": "De Lunes a Viernes",
     "timetable": "9 a 18 hs",
-    "categories": ["alimentos"]
+    "categories": ["alimentos"],
+    "direction": {
+      "lat": 41.3845445,
+
+      "lng": 2.1374366
+    }
+  },
+  {
+    "name": "Ejemplo 1",
+    "slug": "ejemplo-1",
+    "image": "https://www.busquetsgalvez.com/web/wp-content/uploads/2016/06/Via-Laietana-12.jpg",
+    "address": "Carrer Llastic 2, Barcelona",
+    "phoneNumber": "123456789",
+    "web": "http://google.com",
+    "days": "De Lunes a Viernes",
+    "timetable": "9 a 18 hs",
+    "categories": ["ropa", "juguetes"],
+    "direction": {
+      "lat": 41.3839762,
+      "lng": 2.1291988
+    }
+  },
+  {
+    "name": "Ejemplo 2",
+    "slug": "ejemplo-2",
+    "image": "https://www.busquetsgalvez.com/web/wp-content/uploads/2016/06/Via-Laietana-12.jpg",
+    "address": "Carrer Llastic 2",
+    "phoneNumber": "123456789",
+    "web": "http://google.com",
+    "days": "De Lunes a Viernes",
+    "timetable": "9 a 18 hs",
+    "categories": ["ropa", "juguetes", "muebles"],
+    "direction": {
+      "lat": 41.3839762,
+      "lng": 2.1291988
+    }
+  },
+  {
+    "name": "Ejemplo 3",
+    "slug": "ejemplo-3",
+    "image": "https://www.busquetsgalvez.com/web/wp-content/uploads/2016/06/Via-Laietana-12.jpg",
+    "address": "Carrer Llastic 2",
+    "phoneNumber": "123456789",
+    "days": "De Lunes a Viernes",
+    "timetable": "9 a 18 hs",
+    "categories": ["alimentos"],
+    "direction": {
+      "lat": 41.3845445,
+
+      "lng": 2.1374366
+    }
+  },
+  {
+    "name": "Ejemplo 1",
+    "slug": "ejemplo-1",
+    "image": "https://www.busquetsgalvez.com/web/wp-content/uploads/2016/06/Via-Laietana-12.jpg",
+    "address": "Carrer Llastic 2, Barcelona",
+    "phoneNumber": "123456789",
+    "web": "http://google.com",
+    "days": "De Lunes a Viernes",
+    "timetable": "9 a 18 hs",
+    "categories": ["ropa", "juguetes"],
+    "direction": {
+      "lat": 41.3839762,
+      "lng": 2.1291988
+    }
+  },
+  {
+    "name": "Ejemplo 2",
+    "slug": "ejemplo-2",
+    "image": "https://www.busquetsgalvez.com/web/wp-content/uploads/2016/06/Via-Laietana-12.jpg",
+    "address": "Carrer Llastic 2",
+    "phoneNumber": "123456789",
+    "web": "http://google.com",
+    "days": "De Lunes a Viernes",
+    "timetable": "9 a 18 hs",
+    "categories": ["ropa", "juguetes", "muebles"],
+    "direction": {
+      "lat": 41.3839762,
+      "lng": 2.1291988
+    }
+  },
+  {
+    "name": "Ejemplo 3",
+    "slug": "ejemplo-3",
+    "image": "https://www.busquetsgalvez.com/web/wp-content/uploads/2016/06/Via-Laietana-12.jpg",
+    "address": "Carrer Llastic 2",
+    "phoneNumber": "123456789",
+    "days": "De Lunes a Viernes",
+    "timetable": "9 a 18 hs",
+    "categories": ["alimentos"],
+    "direction": {
+      "lat": 41.3845445,
+
+      "lng": 2.1374366
+    }
   }
 ]

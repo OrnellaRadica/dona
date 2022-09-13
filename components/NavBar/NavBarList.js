@@ -21,7 +21,7 @@ const CATEGORIES = [
 ];
 
 const links = CATEGORIES.map((category) => (
-  <Link href={category.href}>
+  <Link key={category.title} href={category.href}>
     <a className="link link-underline link-underline-black text-black">
       {category.title}
     </a>
