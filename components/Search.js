@@ -1,17 +1,20 @@
 import { useState } from "react";
 import Button from "../components/Button";
 import AutoComplete from "react-google-autocomplete";
+import { useRouter } from "next/router";
 
 const GOOGLE_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
 
 function Search() {
+  const router = useRouter();
   const [direction, setDirection] = useState();
 
+  console.log("direction", direction);
   const handlePlaceSelected = (place) => {
-    const address = place.address_components.types;
-    setDirection(place.geometry.location.lat());
+    const lat = place.geometry.location.lat();
+    const lng = place.geometry.location.lng();
+    setDirection({ lat, lng });
     console.log("setdirection", direction);
-    console.log("address", address);
   };
 
   return (
@@ -24,12 +27,18 @@ function Search() {
       </div>
 
       <form
-        onSubmit={(e) => setDirection(e.target.value)}
+        onSubmit={(e) => {
+          console.log("e", e);
+          e.preventDefault();
+          router.push({ pathname: "/list", query: direction });
+          // TODO: Do the search and redirect to the correct page.
+          // Use the direction state, to redirect the user to the correct page.
+        }}
         className="flex justify-between gap-2 w-full h-full"
       >
         <AutoComplete
           apiKey={GOOGLE_API_KEY}
-          onPlaceSelected={(place) => console.log(place)}
+          onPlaceSelected={handlePlaceSelected}
           className="rounded-lg px-2 py-1  w-full border border-solid border-gray-200  transition ease-in-out focus:border-input-border-focus focus:outline-none hover:border-input-border-hover focus:shadow-input-focus"
           options={{
             types: ["address"],

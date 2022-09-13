@@ -8,7 +8,11 @@
     "web": "http://google.com",
     "days": "De Lunes a Viernes",
     "timetable": "9 a 18 hs",
-    "categories": ["ropa", "juguetes"]
+    "categories": ["ropa", "juguetes"],
+    "direction": {
+      "lat": 41.3839762,
+      "lng": 2.1291988
+    }
   },
   {
     "name": "Ejemplo 2",
@@ -19,7 +23,11 @@
     "web": "http://google.com",
     "days": "De Lunes a Viernes",
     "timetable": "9 a 18 hs",
-    "categories": ["ropa", "juguetes", "muebles"]
+    "categories": ["ropa", "juguetes", "muebles"],
+    "direction": {
+      "lat": 41.3839762,
+      "lng": 2.1291988
+    }
   },
   {
     "name": "Ejemplo 3",
@@ -29,6 +37,11 @@
     "phoneNumber": "123456789",
     "days": "De Lunes a Viernes",
     "timetable": "9 a 18 hs",
-    "categories": ["alimentos"]
+    "categories": ["alimentos"],
+    "direction": {
+      "lat": 41.3845445,
+
+      "lng": 2.1374366
+    }
   }
 ]
