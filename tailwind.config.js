@@ -26,6 +26,10 @@ module.exports = {
       boxShadow: {
         "input-focus": "0 0 0 1px #2684FF",
       },
+      padding: {
+        "1/2": "50%",
+        full: "100%",
+      },
     },
   },
   plugins: [],
