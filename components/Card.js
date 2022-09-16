@@ -16,13 +16,24 @@ function Card({
 }) {
   return (
     <div className="flex flex-col sm:flex-row w-full bg-white scroll-p-1 shadow-md rounded-lg overflow-hidden">
-      <div className="w-full sm:max-h-[300px]">
+      <div className="w-full sm:max-h-[300px] sm:grid">
         <Image
           width="100%"
           height="100%"
           objectFit="cover"
           layout="responsive"
+          objectPosition="center"
           src={image}
+          style={{
+            objectPosition: "center",
+          }}
+          // style={{
+          //   left: "auto",
+          //   right: "auto",
+
+          //   top: "auto",
+          //   bottom: "auto",
+          // }}
         />
       </div>
       <div className="w-full p-4 flex flex-col justify-between gap-4">
@@ -35,8 +46,8 @@ function Card({
           <ul className="leading-loose">
             <li>Dirección: {address}</li>
             <li>Teléfono: {phoneNumber}</li>
-            <li>Días de atención: {days}</li>
-            <li>Horario: {timetable}</li>
+            {days ? <li>Días de atención: {days}</li> : null}
+            {timetable ? <li>Horario: {timetable}</li> : null}
           </ul>
           <div className="flex gap-1">
             {categories.map((category) => (
