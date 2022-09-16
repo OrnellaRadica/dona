@@ -34,11 +34,11 @@ function Institution({ institutionData }) {
           <a href="#"> Volver al listado</a>
         </div>
       </button>
-      <div className="flex flex-col sm:flex-row p-4">
-        <div className="basis-6/12 w-full">
+      <div className="flex flex-col lg:flex-row p-4">
+        <div className="basis-6/12 w-full ">
           <Image
             width="100%"
-            height="100%"
+            height="80%"
             objectFit="cover"
             layout="responsive"
             src={institutionData.image}
@@ -47,20 +47,28 @@ function Institution({ institutionData }) {
         </div>
 
         <div className="basis-6/12 p-6">
-          <h2>{institutionData.name}</h2>
-          <ul className="leading-loose">
-            <li>Dirección: {institutionData.address}</li>
-            <li>Teléfono: {institutionData.phoneNumber}</li>
-            <li>Días de atención: {institutionData.days}</li>
-            <li>Horario: {institutionData.timetable}</li>
-          </ul>
-          <div className="text-justify m-8">{institutionData.information}</div>
+          <div className="h-full flex flex-col justify-between">
+            <div className="flex flex-col gap-4">
+              <h2 className="uppercase font-bold">{institutionData.name}</h2>
+              <ul className="leading-loose">
+                <li>Dirección: {institutionData.address}</li>
+                <li>Teléfono: {institutionData.phoneNumber}</li>
+                {institutionData.days ? (
+                  <li>Días de atención: {institutionData.days}</li>
+                ) : null}
+                {institutionData.timetable ? (
+                  <li>Horario: {institutionData.timetable}</li>
+                ) : null}
+              </ul>
 
-          <div className="flex justify-end mt-8 gap-4">
-            <Button ariaLabel="Telefono" hasLink>
-              <a href={`tel:${institutionData.phoneNumber}`}>Llamar</a>
-            </Button>
-            <div className="">
+              <div className="text-justify">{institutionData.information}</div>
+            </div>
+
+            <div className="flex justify-end gap-4">
+              <Button ariaLabel="Telefono" hasLink>
+                <a href={`tel:${institutionData.phoneNumber}`}>Llamar</a>
+              </Button>
+
               <Button ariaLabel="sitio web" variant="empty" hasLink>
                 <a href={institutionData.web} target="_blank" rel="noreferrer">
                   Sitio web
