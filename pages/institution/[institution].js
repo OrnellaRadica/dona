@@ -2,11 +2,16 @@ import NavBar from "../../components/NavBar/NavBar";
 import data from "../../data.json";
 import Button from "../../components/Button";
 import { useRouter } from "next/router";
+import Map from "../../components/Map";
+import {  useLoadScript } from '@react-google-maps/api';
+
 
 import Image from "next/image";
 
 function Institution({ institutionData }) {
   const router = useRouter();
+  const {isLoaded} = useLoadScript({googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY});
+
   return (
     <div className="max-w-[1400px] ml-auto mr-auto">
       <div className="w-full overflow-x-hidden overflow-y-hidden">
@@ -78,6 +83,10 @@ function Institution({ institutionData }) {
           </div>
         </div>
       </div>
+      {isLoaded ?  <Map 
+      typeMarker="unique"
+      direction={institutionData.direction}
+      /> : <div>cargando</div>}
     </div>
   );
 }

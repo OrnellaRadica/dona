@@ -50,3 +50,8 @@ body {
   background-size: 100% 3px;
   background-position: 0 100%;
 }
+
+.map-container{
+  width: 100%;
+  height: 600px;
+}
