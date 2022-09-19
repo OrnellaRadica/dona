@@ -1,12 +1,16 @@
 import NavBar from "../components/NavBar/NavBar";
 import Search from "../components/Search";
+import Map from "../components/Map";
 import classnames from "classnames";
 import CategoriesBlock from "../components/CategoriesBlock.js";
+import {  useLoadScript } from '@react-google-maps/api';
 
 function Home() {
   const container = classnames(
     "w-full md:w-1/2 flex items-center justify-center"
   );
+
+const {isLoaded} = useLoadScript({googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY});
   return (
     <div className="max-w-[1400px] ml-auto mr-auto">
       <div className="w-full overflow-x-hidden overflow-y-hidden">
@@ -21,7 +25,10 @@ function Home() {
         </div>
       </div>
       <div className="h-[108px]"></div>
+      {isLoaded ?  <Map typeMarker="all" /> : <div>cargando</div>}
+     
     </div>
   );
 }
 export default Home;
+
