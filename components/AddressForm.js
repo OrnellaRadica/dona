@@ -1,15 +1,10 @@
-import React, { useState } from "react";
 import AutoComplete from "react-google-autocomplete";
 import { useFormikContext } from "formik";
-import { inputClass } from "components/Inputs/InputBase";
-import { Input } from "components/Inputs";
 
 const GOOGLE_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
 
 const AddressForm = ({ values, ACCOUNT_FIELDS }) => {
   const { setFieldValue } = useFormikContext();
-  const [addressInputs, setStateAddressInputs] = useState(false);
-  const handleClick = () => setStateAddressInputs(!addressInputs);
 
   const handlePlaceSelected = (place) => {
     const route = place.address_components.find((a) =>

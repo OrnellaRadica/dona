@@ -1,22 +1,19 @@
 import NavBar from "../components/NavBar/NavBar";
 import Search from "../components/Search";
-import Map from "../components/Map";
 import classnames from "classnames";
 import CategoriesBlock from "../components/CategoriesBlock.js";
-import {  useLoadScript } from '@react-google-maps/api';
 
 function Home() {
   const container = classnames(
     "w-full md:w-1/2 flex items-center justify-center"
   );
 
-const {isLoaded} = useLoadScript({googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY});
   return (
-    <div className="max-w-[1400px] ml-auto mr-auto">
+    <div className="max-w-[1400px] h-screen ml-auto mr-auto">
       <div className="w-full overflow-x-hidden overflow-y-hidden">
         <NavBar />
       </div>
-      <div className="flex flex-wrap-reverse md:flex-nowrap  h-[calc(100vh-216px)] gap-4 w-full px-4 md:px-12 md:py-6">
+      <div className="flex flex-wrap-reverse md:flex-nowrap  h-[calc(100vh-108px)] md:h-[calc(100vh-216px)] gap-8 sm:gap-4 w-full px-4 md:px-12 md:py-6">
         <div className={container}>
           <CategoriesBlock />
         </div>
@@ -24,11 +21,8 @@ const {isLoaded} = useLoadScript({googleMapsApiKey: process.env.NEXT_PUBLIC_GOOG
           <Search />
         </div>
       </div>
-      <div className="h-[108px]"></div>
-      {isLoaded ?  <Map typeMarker="all" /> : <div>cargando</div>}
-     
+      <div className="h-0 md:h-[108px]"></div>
     </div>
   );
 }
 export default Home;
-

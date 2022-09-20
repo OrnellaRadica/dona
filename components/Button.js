@@ -11,6 +11,7 @@ const Button = ({
   disabled,
   ariaLabel,
   hasLink,
+  mapCard,
 }) => {
   const classesButton = classnames({
     "inline-flex items-center rounded-md focus:outline-none focus:border-accent-blue focus:shadow-outline-indigo transition ease-in-out duration-150": true,
@@ -23,7 +24,8 @@ const Button = ({
 
     "px-2 md:px-6 py-2 text-lg leading-6": size === "normal" && !hasLink,
     "px-2 md:px-4 py-1 text-sm leading-6": size === "small" && !hasLink,
-    "[&>a]:p-2 [&>a]:md:px-6  text-lg leading-6": hasLink,
+    "[&>a]:p-2 [&>a]:md:px-6 text-lg leading-6": hasLink,
+    "[&>a]:md:px-1 text-base ": mapCard,
     "w-full": isFullWidth,
     "opacity-50 cursor-not-allowed": disabled,
   });
