@@ -1,21 +1,47 @@
-import {useMemo} from 'react'
-import { GoogleMap, Marker } from '@react-google-maps/api';
-import data from "../data.json"
+import { useState } from "react";
+import { GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
+import InfoWindowCard from "./InfoWindowCard";
 
-
-function Map({typeMarker, direction
+function Map({
+  typeMarker,
+  direction,
+  institutions,
+  zoom,
+  center,
+  mapContainerClassName,
 }) {
-  const center= useMemo(() => ({lat:41.3986526, lng:2.1613738}),[]);
-  return ( 
-    <GoogleMap zoom={12} center={center}  mapContainerClassName="map-container">
-        {typeMarker === "all" ?
-      ( data.map((institution)=>(
-       <Marker position={institution.direction}/>
-       )))
-       : ( <Marker position={direction}/>) }
-       
+  const [activeMarker, setActiveMarker] = useState(null);
+
+  const handleActiveMarker = (marker) => {
+    if (marker === activeMarker) {
+      return;
+    }
+    setActiveMarker(marker);
+  };
+  return (
+    <GoogleMap
+      zoom={zoom}
+      center={center}
+      mapContainerClassName={mapContainerClassName}
+    >
+      {typeMarker === "all" ? (
+        institutions.map((institution) => (
+          <Marker
+            position={institution.direction}
+            onClick={() => handleActiveMarker(institution.id)}
+          >
+            {activeMarker === institution.id ? (
+              <InfoWindow onCloseClick={() => setActiveMarker(null)}>
+                <InfoWindowCard institution={institution} />
+              </InfoWindow>
+            ) : null}
+          </Marker>
+        ))
+      ) : (
+        <Marker position={direction} />
+      )}
     </GoogleMap>
-  )
+  );
 }
 
-export default Map
+export default Map;

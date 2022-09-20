@@ -49,6 +49,14 @@ function Search() {
         />
         <Button type="submit">Buscar</Button>
       </form>
+      <div className="hidden sm:flex sm:flex-col sm:items-center sm:gap-4">
+        <div className="font-bold uppercase">
+          Ver localización de todas las instituciones
+        </div>
+        <Button variant="secondary" hasLink>
+          <a href="/institutionsMap">Mapa</a>
+        </Button>
+      </div>
     </div>
   );
 }

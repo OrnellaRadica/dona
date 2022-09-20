@@ -1,6 +1,7 @@
 [
   {
     "name": "DISA Sagrada Familia",
+    "id": "01",
     "slug": "DisaSagradaFamilia",
     "image": "/images/disa-sf.jpeg",
     "address": "Carrer de Nàpols 171",
@@ -17,6 +18,7 @@
   },
   {
     "name": "DISA Rebost solidari de Sant Andreu",
+    "id": "02",
     "slug": "DisaSantAndreu",
     "image": "/images/disasa.png",
     "address": "Carrer de Berenguer de Palou",
@@ -33,6 +35,7 @@
   },
   {
     "name": "Banc de Recursos Barcelona",
+    "id": "03",
     "slug": "Banc-Recursos-Bcn",
     "image": "/images/banc-recursos.png",
     "address": "Carrer Gran de Gràcia 167, Principal 2ª",
@@ -49,6 +52,7 @@
   },
   {
     "name": "Banc dels Aminets",
+    "id": "04",
     "slug": "Banc-Aminets",
     "image": "/images/banc-alimentos.png",
     "address": "Carrer de Motors 122",
@@ -65,6 +69,7 @@
   },
   {
     "name": "Fundació Temps i Compromís",
+    "id": "045",
     "slug": "Fundacio-Temps-Compromis",
     "image": "/images/compromiso.png",
     "address": "Carrer del Trèvol 9-19",
@@ -79,6 +84,7 @@
   },
   {
     "name": "DISA Sant Josep Oriol",
+    "id": "05",
     "slug": "DisaSantJosep",
     "image": "/images/disasjo.png",
     "address": "Carrer del Comte d’Urgell 176",
@@ -95,6 +101,7 @@
   },
   {
     "name": "Cáritas",
+    "id": "06",
     "slug": "Caritas",
     "image": "/images/caritas-fundacion.png",
     "address": "Via Laietana 5, Entresuelo",
@@ -111,6 +118,7 @@
   },
   {
     "name": "Socialfooding",
+    "id": "07",
     "slug": "Socialfooding",
     "image": "/images/socialfooding.png",
     "address": "Calle d’Alí Beí 29, Entresuelo 2ª",
@@ -125,6 +133,7 @@
   },
   {
     "name": "Almacén del Banco de Alimentos en Mercabarna",
+    "id": "08",
     "slug": "Alimentos-Mercabarna",
     "image": "/images/mercabarna.jpeg",
     "address": "Carrer Transversal 1, nº41",
@@ -141,6 +150,7 @@
   },
   {
     "name": "Raval solidari",
+    "id": "09",
     "slug": "Raval-Solidari",
     "image": "/images/raval.png",
     "address": "Carrer de Guifré 4",
@@ -158,6 +168,7 @@
 
   {
     "name": "Botiga Amiga Clot - Fundació Formació i Treball",
+    "id": "10",
     "slug": "Botiga-Amiga",
     "image": "/images/treball.png",
     "address": "Carrer de Sibelius 9",
@@ -174,6 +185,7 @@
   },
   {
     "name": "Humana Meridiana",
+    "id": "11",
     "slug": "Humana-Meridiana",
     "image": "/images/humana.png",
     "address": "Avinguda Meridiana 314",
@@ -190,6 +202,7 @@
   },
   {
     "name": "Humana Para-lel",
+    "id": "12",
     "slug": "Humana-Para-lel",
     "image": "/images/humana.png",
     "address": "Av. del Paral·lel 85",
@@ -206,6 +219,7 @@
   },
   {
     "name": "Humana Gracia",
+    "id": "13",
     "slug": "Humana-Gracia",
     "image": "/images/humana.png",
     "address": "Travessera de Gràcia 80",
@@ -222,6 +236,7 @@
   },
   {
     "name": "Zara Plaza Catalunya",
+    "id": "14",
     "slug": "Zara-PlCatalunya",
     "image": "/images/zara.png",
     "address": "Pl. de Catalunya 5",
@@ -238,6 +253,7 @@
   },
   {
     "name": "Zara Maquinista",
+    "id": "15",
     "slug": "Zara-Maquinista",
     "image": "/images/zara.png",
     "address": "Carrer de Potosí 2",
@@ -254,6 +270,7 @@
   },
   {
     "name": "Casal Dels Infants A.S.B.",
+    "id": "16",
     "slug": "Casal-Dels-Infants",
     "image": "/images/casa-infantes.png",
     "address": "Carrer de la Junta de Comerç 16,",
@@ -270,6 +287,7 @@
   },
   {
     "name": "COMPARTE Y RECICLA",
+    "id": "17",
     "slug": "Comparte-y-recicla",
     "image": "/images/comparte.png",
     "address": "Calle Muntaner 9, Local 1",
@@ -286,6 +304,7 @@
   },
   {
     "name": "FUNDACIÓN ENGRUNES",
+    "id": "18",
     "slug": "FUNDACION-ENGRUNES",
     "image": "/images/engrunen.png",
     "address": "Carrer de Mallorca 467",
@@ -302,6 +321,7 @@
   },
   {
     "name": "SOLIDANÇA TREBALL E.I, SL.",
+    "id": "19",
     "slug": "Solidanca-treball",
     "image": "/images/solidanza.png",
     "address": "C/ Treball 5",
@@ -318,6 +338,7 @@
   },
   {
     "name": "REMAR",
+    "id": "20",
     "slug": "REMAR",
     "image": "/images/remar.png",
     "address": "Av. del Paral·lel 97",

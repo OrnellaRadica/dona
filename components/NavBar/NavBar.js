@@ -16,8 +16,9 @@ function navBar() {
           <a>Good Hands</a>
         </Link>
       </div>
-
-      <NavBarList open={open} />
+      <div className="flex gap-8 items-center">
+        <NavBarList open={open} />
+      </div>
 
       <div className="sm:hidden text-black">
         <NavBarMenuHamburger open={open} handleClick={handleClick} />
