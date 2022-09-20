@@ -1,6 +1,8 @@
 import NavBar from "../../components/NavBar/NavBar";
 import Card from "../../components/Card";
-import data from "../../data.json";
+
+const API_URL = "http://localhost:3001/api/getAll/institutions";
+let receivedInstitutions = [];
 
 function Page({ category, institutions }) {
   return (
@@ -27,8 +29,18 @@ function Page({ category, institutions }) {
     </div>
   );
 }
-
 export default Page;
+
+const getInstitutions = () => {
+  fetch(API_URL)
+    .then((response) => response.json())
+    .catch((error) => {
+      console.log("Error", error);
+    })
+    .then((data) => {
+      receivedInstitutions = data.data;
+    });
+};
 
 function createRandomKey() {
   return Math.random().toString(36).substring(2) + Date.now().toString(36);
@@ -45,9 +57,10 @@ export const getStaticPaths = () => {
     fallback: false,
   };
 };
+
 export const getStaticProps = ({ params }) => {
   const category = params.category;
-  const institutions = data.filter((institution) =>
+  const institutions = receivedInstitutions.filter((institution) =>
     institution.categories.includes(category)
   );
   return {
@@ -57,3 +70,5 @@ export const getStaticProps = ({ params }) => {
     },
   };
 };
+
+getInstitutions();

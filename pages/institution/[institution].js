@@ -1,10 +1,13 @@
 import Image from "next/image";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { useLoadScript } from "@react-google-maps/api";
 import NavBar from "../../components/NavBar/NavBar";
-import data from "../../data.json";
 import Button from "../../components/Button";
 import Map from "../../components/Map";
+
+const API_URL = "http://localhost:3001/api/getAll/institutions";
+let receivedInstitutions = [];
 
 function Institution({ institutionData }) {
   const router = useRouter();
@@ -119,8 +122,21 @@ function Institution({ institutionData }) {
 
 export default Institution;
 
+const getInstitutions = () => {
+  fetch(API_URL)
+    .then((response) => response.json())
+    .catch((error) => {
+      console.log("Error", error);
+    })
+    .then((data) => {
+      receivedInstitutions = data.data;
+    });
+};
+
+getInstitutions();
+
 export const getStaticPaths = () => {
-  const institutionUrls = data.map(
+  const institutionUrls = receivedInstitutions.map(
     (institution) => `/institution/${institution.slug}`
   );
 
@@ -132,7 +148,7 @@ export const getStaticPaths = () => {
 
 export const getStaticProps = ({ params }) => {
   const slug = params.institution;
-  const institutionData = data.find((i) => i.slug === slug);
+  const institutionData = receivedInstitutions.find((i) => i.slug === slug);
 
   if (!institutionData) {
     return {

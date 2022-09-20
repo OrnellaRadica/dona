@@ -1,7 +1,9 @@
 import React from "react";
 import NavBar from "../components/NavBar/NavBar";
 import Card from "../components/Card";
-import data from "../data.json";
+
+const API_URL = "http://localhost:3001/api/getAll/institutions";
+let receivedInstitutions = [];
 
 function list({ institutions, address }) {
   return (
@@ -48,7 +50,7 @@ export function getServerSideProps({ query }) {
   const { lat, lng, route, street_number } = query;
   const address = route + " " + street_number;
   // search the related institutions
-  const institutions = data.filter((institution) => {
+  const institutions = receivedInstitutions.filter((institution) => {
     if (!lat || !lng) return institution;
 
     const distance =
@@ -71,3 +73,16 @@ export function getServerSideProps({ query }) {
 }
 
 export default list;
+
+const getInstitutions = () => {
+  fetch(API_URL)
+    .then((response) => response.json())
+    .catch((error) => {
+      console.log("Error", error);
+    })
+    .then((data) => {
+      receivedInstitutions = data.data;
+    });
+};
+
+getInstitutions();
