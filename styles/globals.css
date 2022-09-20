@@ -16,19 +16,15 @@ body {
 }
 .category {
   background-image: linear-gradient(205deg, #7ed957, #2196f3);
-
 }
 .category1 {
   background-image: linear-gradient(335deg, #7ed957, #2196f3);
-
 }
 .category2 {
   background-image: linear-gradient(25deg, #7ed957, #2196f3);
-
 }
 .category3 {
   background-image: linear-gradient(155deg, #7ed957, #2196f3);
-
 }
 
 .link-underline {
@@ -51,7 +47,11 @@ body {
   background-position: 0 100%;
 }
 
-.map-container{
+.map-container {
   width: 100%;
   height: 600px;
+}
+.map-container-institution {
+  width: 100%;
+  height: 350px;
 }

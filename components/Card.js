@@ -16,26 +16,21 @@ function Card({
 }) {
   return (
     <div className="flex flex-col sm:flex-row w-full bg-white scroll-p-1 shadow-md rounded-lg overflow-hidden">
-      <div className="w-full sm:max-h-[300px] sm:grid">
-        <Image
-          width="100%"
-          height="100%"
-          objectFit="cover"
-          layout="responsive"
-          objectPosition="center"
-          src={image}
-          style={{
-            objectPosition: "center",
-          }}
-          // style={{
-          //   left: "auto",
-          //   right: "auto",
-
-          //   top: "auto",
-          //   bottom: "auto",
-          // }}
-        />
-      </div>
+      <Link href={`/institution/${slug}`}>
+        <div className="w-full sm:max-h-[300px] sm:grid">
+          <Image
+            width="100%"
+            height="100%"
+            objectFit="cover"
+            layout="responsive"
+            objectPosition="center"
+            src={image}
+            style={{
+              objectPosition: "center",
+            }}
+          />
+        </div>
+      </Link>
       <div className="w-full p-4 flex flex-col justify-between gap-4">
         <div className="flex flex-col gap-2">
           <h2 className="uppercase underline font-bold">
@@ -51,7 +46,7 @@ function Card({
           </ul>
           <div className="flex gap-1">
             {categories.map((category) => (
-              <CategoryTag>{category}</CategoryTag>
+              <CategoryTag key={category}>{category}</CategoryTag>
             ))}
           </div>
         </div>

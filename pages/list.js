@@ -12,7 +12,9 @@ function list({ institutions, address }) {
 
       <div className="w-full max-w-[1000px] px-4 md:px-12 md:py-6 flex flex-col gap-4">
         <div className="font-semibold text-xl ">
-          Instituciones cercanas a {address}
+          {address.includes(undefined)
+            ? "Instituciones"
+            : `Instituciones cercanas a ${address}`}
         </div>
 
         {institutions?.map((institution) => (
