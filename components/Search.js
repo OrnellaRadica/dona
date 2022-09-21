@@ -45,6 +45,7 @@ function Search() {
           className="rounded-lg px-2 py-1  w-full border border-solid border-gray-200  transition ease-in-out focus:border-input-border-focus focus:outline-none hover:border-input-border-hover focus:shadow-input-focus"
           options={{
             types: ["address"],
+            componentRestrictions: { country: "es"}
           }}
         />
         <Button type="submit">Buscar</Button>
