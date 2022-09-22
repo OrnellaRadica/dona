@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import NavBar from "../components/NavBar/NavBar";
 import Search from "../components/Search";
 import classnames from "classnames";
@@ -22,6 +23,22 @@ const DEVS = [
     image: "/images/foto-ma.jpg",
   },
 ];
+
+const OBJS = [
+  {
+    name: "Hambre cero",
+    image: "/images/hambrecero.jpg",
+  },
+  {
+    name: "Comunidades y ciudades sostenibles",
+    image: "/images/cycsostenibles.jpg",
+  },
+  {
+    name: "Producción y consumo responsables",
+    image: "/images/prodyconsresponsables.jpg",
+  },
+];
+
 function Home() {
   const container = classnames(
     "w-full md:w-1/2 flex items-center justify-center"
@@ -41,10 +58,12 @@ function Home() {
         </div>
       </div>
       <div className="h-0 md:h-[108px]"></div>
-      <div className="px-4 py-12 md:px-12 md:py-6 flex flex-col gap-8 items-center justify-center ml-auto mr-auto  max-w-[1000px]">
-        <div className="flex flex-col gap-4">
-          <div className="text-2xl">¿Quiénes somos?</div>
-          <div>
+      <div className="px-4 py-12 md:px-12 md:py-6 flex flex-col gap-32 items-center justify-center ml-auto mr-auto max-w-[1000px]">
+        <div className="flex flex-col gap-6">
+          <div className="text-slate-800 text-4xl tracking-wide font-extrabold sm:text-3xl text-center">
+            ¿Quiénes somos?
+          </div>
+          <div className="mt-6 max-w-3xl mx-auto text-lg text-center">
             Un grupo de estudiantes que presentan esta página como parte de su
             proyecto final de curso realizado en la Fundación Esplai, Barcelona.
             <br />
@@ -53,10 +72,32 @@ function Home() {
             consumo responsables” de la nueva agenda de desarrollo sostenible
             pautada para alcanzarse en los próximos 15 años.
           </div>
+          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 mt-6">
+            {OBJS.map((obj) => (
+              <div key={obj.image} className="flex flex-col gap-2 items-center">
+                <div className="w-40 h-40 overflow-hidden">
+                  <Image
+                    width="100%"
+                    height="100%"
+                    objectFit="cover"
+                    layout="responsive"
+                    objectPosition="center"
+                    src={obj.image}
+                    alt={obj.name}
+                    style={{
+                      objectPosition: "center",
+                    }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="flex flex-col gap-4">
-          <div className="text-2xl">Good Hands</div>
-          <div>
+          <div className="text-slate-800 text-4xl tracking-wide font-extrabold sm:text-3xl text-center">
+            Good Hands
+          </div>
+          <div className="mt-6 max-w-3xl mx-auto text-lg text-center">
             Surge de la necesidad de facilitar la búsqueda de instituciones
             donde puedas donar todo aquello que ya no usas a personas que lo
             necesitan. Inspirándonos en los problemas que hemos tenido cada uno
@@ -66,27 +107,27 @@ function Home() {
             al usuario.
           </div>
         </div>
-        <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8">
-          {DEVS.map((dev) => (
-            <div className="flex flex-col gap-2 items-center">
-              <div className="rounded-full w-40 h-40 overflow-hidden">
-                <Image
-                  width="100%"
-                  height="100%"
-                  objectFit="cover"
-                  layout="responsive"
-                  objectPosition="center"
-                  src={dev.image}
-                  alt={dev.name}
-                  style={{
-                    objectPosition: "center",
-                  }}
-                />
-              </div>
-              <div className="font-semibold">{dev.name}</div>
+      </div>
+      <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 mt-8">
+        {DEVS.map((dev) => (
+          <div key={dev.image} className="flex flex-col gap-2 items-center">
+            <div className="rounded-full w-40 h-40 overflow-hidden">
+              <Image
+                width="100%"
+                height="100%"
+                objectFit="cover"
+                layout="responsive"
+                objectPosition="center"
+                src={dev.image}
+                alt={dev.name}
+                style={{
+                  objectPosition: "center",
+                }}
+              />
             </div>
-          ))}
-        </div>
+            <div className="font-semibold">{dev.name}</div>
+          </div>
+        ))}
       </div>
       <div className="h-0 md:h-[108px]"></div>
     </div>
