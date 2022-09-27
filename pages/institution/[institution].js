@@ -1,13 +1,16 @@
 import Image from "next/image";
-import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { useLoadScript } from "@react-google-maps/api";
 import NavBar from "../../components/NavBar/NavBar";
 import Button from "../../components/Button";
 import Map from "../../components/Map";
 
+/*const API_URL =
+  "https://z7d7c6145-z5b7a4427-gtw.z897bb54d.blockdev.sh/api/getAll/institutions";
+const API_URL_SLUG = (slug) =>
+  `https://z7d7c6145-z5b7a4427-gtw.z897bb54d.blockdev.sh/api/getOne/${slug}`;*/
 const API_URL = "http://localhost:3001/api/getAll/institutions";
-let receivedInstitutions = [];
+const API_URL_SLUG = (slug) => `http://localhost:3001/api/getOne/${slug}`;
 
 function Institution({ institutionData }) {
   const router = useRouter();
@@ -122,20 +125,18 @@ function Institution({ institutionData }) {
 
 export default Institution;
 
-const getInstitutions = () => {
-  fetch(API_URL)
-    .then((response) => response.json())
-    .catch((error) => {
-      console.log("Error", error);
-    })
-    .then((data) => {
-      receivedInstitutions = data.data;
-    });
-};
+export const getStaticPaths = async () => {
+  const getInstitutions = () =>
+    fetch(API_URL)
+      .then((response) => response.json())
+      .catch((error) => {
+        console.log("Error", error);
+      })
+      .then((data) => {
+        return data.data;
+      });
 
-getInstitutions();
-
-export const getStaticPaths = () => {
+  const receivedInstitutions = await getInstitutions();
   const institutionUrls = receivedInstitutions.map(
     (institution) => `/institution/${institution.slug}`
   );
@@ -146,9 +147,21 @@ export const getStaticPaths = () => {
   };
 };
 
-export const getStaticProps = ({ params }) => {
+export const getStaticProps = async ({ params }) => {
   const slug = params.institution;
-  const institutionData = receivedInstitutions.find((i) => i.slug === slug);
+  const url = API_URL_SLUG(slug);
+
+  const getInstitutionData = () =>
+    fetch(url)
+      .then((response) => response.json())
+      .catch((error) => {
+        console.log("Error", error);
+      })
+      .then((data) => {
+        return data.data;
+      });
+
+  const institutionData = await getInstitutionData();
 
   if (!institutionData) {
     return {

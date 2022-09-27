@@ -2,8 +2,9 @@ import React from "react";
 import NavBar from "../components/NavBar/NavBar";
 import Card from "../components/Card";
 
+/*const API_URL =
+  "https://z7d7c6145-z5b7a4427-gtw.z897bb54d.blockdev.sh/api/getAll/institutions";*/
 const API_URL = "http://localhost:3001/api/getAll/institutions";
-let receivedInstitutions = [];
 
 function list({ institutions, address }) {
   return (
@@ -45,7 +46,19 @@ function getDistance(x1, y1, x2, y2) {
   return Math.sqrt(x * x + y * y);
 }
 
-export function getServerSideProps({ query }) {
+export const getServerSideProps = async ({ query }) => {
+  const getInstitutionData = () =>
+    fetch(API_URL)
+      .then((response) => response.json())
+      .catch((error) => {
+        console.log("Error", error);
+      })
+      .then((data) => {
+        return data.data;
+      });
+
+  const receivedInstitutions = await getInstitutionData();
+
   const MAX_DISTANCE = 1500;
   const { lat, lng, route, street_number } = query;
   const address = route + " " + street_number;
@@ -70,19 +83,6 @@ export function getServerSideProps({ query }) {
       address,
     },
   };
-}
-
-export default list;
-
-const getInstitutions = () => {
-  fetch(API_URL)
-    .then((response) => response.json())
-    .catch((error) => {
-      console.log("Error", error);
-    })
-    .then((data) => {
-      receivedInstitutions = data.data;
-    });
 };
 
-getInstitutions();
+export default list;

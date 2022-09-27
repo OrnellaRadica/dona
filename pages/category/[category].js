@@ -1,6 +1,8 @@
 import NavBar from "../../components/NavBar/NavBar";
 import Card from "../../components/Card";
 
+/*const API_URL =
+  "https://z7d7c6145-z5b7a4427-gtw.z897bb54d.blockdev.sh/api/getAll/institutions";*/
 const API_URL = "http://localhost:3001/api/getAll/institutions";
 let receivedInstitutions = [];
 
@@ -58,7 +60,7 @@ export const getStaticPaths = () => {
   };
 };
 
-export const getStaticProps = ({ params }) => {
+export const getStaticProps = async ({ params }) => {
   const category = params.category;
   const institutions = receivedInstitutions.filter((institution) =>
     institution.categories.includes(category)
