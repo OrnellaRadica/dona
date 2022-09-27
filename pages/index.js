@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-import NavBar from "../components/NavBar/NavBar";
+import NavBar from "../components/NavBar/NavBar.js";
 import Search from "../components/Search";
 import classnames from "classnames";
 import CategoriesBlock from "../components/CategoriesBlock.js";
