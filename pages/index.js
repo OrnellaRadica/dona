@@ -4,27 +4,31 @@ import Search from "../components/Search";
 import classnames from "classnames";
 import CategoriesBlock from "../components/CategoriesBlock.js";
 import Image from "next/image";
+import martin from "../public/images/martin.jpg";
+import ornella from "../public/images/foto-or.jpg";
+import anna from "../public/images/foto-ac.jpg";
+import fatima from "../public/images/foto-fh.jpeg";
 
 const DEVS = [
   {
     name: "Ornella Radica",
-    image: "/images/foto-or.jpg",
-    id: 1,
+    image: ornella,
+    id: "ornella",
   },
   {
     name: "Anna Cammarata",
-    image: "/images/foto-ac.jpg",
-    id: 2,
+    image: anna,
+    id: "anna",
   },
   {
     name: "Martín Adegbola",
-    image: "/images/martin.jpg",
-    id: 3,
+    image: martin,
+    id: "martin",
   },
   {
     name: "Fátima Hardoy",
-    image: "/images/foto-fh.jpeg",
-    id: 4,
+    image: fatima,
+    id: "fatima",
   },
 ];
 

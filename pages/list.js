@@ -13,31 +13,36 @@ function list({ institutions, address, institution }) {
         <NavBar />
       </div>
 
-      { institution? 
-      (<div className="w-full max-w-[1000px] px-4 md:px-12 md:py-6 flex flex-col gap-4">
-        
-        <div className="font-semibold text-xl ">
-          {address.includes(undefined)
-            ? "Instituciones"
-            : `Instituciones cercanas a ${address}`}
-        </div>
+      {institutions ? (
+        <div className="w-full max-w-[1000px] px-4 md:px-12 md:py-6 flex flex-col gap-4">
+          <div className="font-semibold text-xl ">
+            {address.includes(undefined)
+              ? "Instituciones"
+              : `Instituciones cercanas a ${address}`}
+          </div>
 
-        {institutions?.map((institution) => (
-          <Card
-            key={institution.key}
-            name={institution.name}
-            slug={institution.slug}
-            image={institution.image}
-            address={institution.address}
-            phoneNumber={institution.phoneNumber}
-            web={institution.web}
-            days={institution.days}
-            timetable={institution.timetable}
-            categories={institution.categories}
-          />
-        ))}
-      </div>)
-            : <div className= "flex h-[calc(100vh-108px)] w-full justify-center items-center" ><div className="font-bold"> Lo sentimos, no se encuentran instituciones cercanas</div></div> }
+          {institutions?.map((institution) => (
+            <Card
+              key={institution.key}
+              name={institution.name}
+              slug={institution.slug}
+              image={institution.image}
+              address={institution.address}
+              phoneNumber={institution.phoneNumber}
+              web={institution.web}
+              days={institution.days}
+              timetable={institution.timetable}
+              categories={institution.categories}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="flex h-[calc(100vh-108px)] w-full justify-center items-center">
+          <div className="font-bold">
+            Lo sentimos, no se encuentran instituciones cercanas
+          </div>
+        </div>
+      )}
     </div>
   );
 }
