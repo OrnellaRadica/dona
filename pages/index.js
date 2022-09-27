@@ -9,18 +9,22 @@ const DEVS = [
   {
     name: "Ornella Radica",
     image: "/images/foto-or.jpg",
+    id: 1,
   },
   {
     name: "Anna Cammarata",
     image: "/images/foto-ac.jpg",
+    id: 2,
+  },
+  {
+    name: "Martín Adegbola",
+    image: "/images/martin.jpg",
+    id: 3,
   },
   {
     name: "Fátima Hardoy",
     image: "/images/foto-fh.jpeg",
-  },
-  {
-    name: "Martín Adegbola",
-    image: "/images/foto-ma.jpg",
+    id: 4,
   },
 ];
 
@@ -28,14 +32,17 @@ const OBJS = [
   {
     name: "Hambre cero",
     image: "/images/hambrecero.jpg",
+    id: "hambrecero",
   },
   {
     name: "Comunidades y ciudades sostenibles",
     image: "/images/cycsostenibles.jpg",
+    id: "comunidades",
   },
   {
     name: "Producción y consumo responsables",
     image: "/images/prodyconsresponsables.jpg",
+    id: "produccion",
   },
 ];
 
@@ -74,7 +81,7 @@ function Home() {
           </div>
           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 mt-6">
             {OBJS.map((obj) => (
-              <div key={obj.image} className="flex flex-col gap-2 items-center">
+              <div key={obj.id} className="flex flex-col gap-2 items-center">
                 <div className="w-40 h-40 overflow-hidden">
                   <Image
                     width="100%"
@@ -110,7 +117,7 @@ function Home() {
       </div>
       <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 mt-8">
         {DEVS.map((dev) => (
-          <div key={dev.image} className="flex flex-col gap-2 items-center">
+          <div key={dev.id} className="flex flex-col gap-2 items-center">
             <div className="rounded-full w-40 h-40 overflow-hidden">
               <Image
                 width="100%"
