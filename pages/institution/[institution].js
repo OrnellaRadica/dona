@@ -160,9 +160,7 @@ export const getStaticProps = async ({ params }) => {
       .catch((error) => {
         console.log("Error", error);
       })
-      .then((data) => {
-        return data.data;
-      });
+      .then((data) => data.data);
 
   const institutionData = await getInstitutionData();
 
