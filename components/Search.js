@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 import Button from "../components/Button";
 import AutoComplete from "react-google-autocomplete";
 import { useRouter } from "next/router";
@@ -45,7 +46,7 @@ function Search() {
           className="rounded-lg px-2 py-1  w-full border border-solid border-gray-200  transition ease-in-out focus:border-input-border-focus focus:outline-none hover:border-input-border-hover focus:shadow-input-focus"
           options={{
             types: ["address"],
-            componentRestrictions: { country: "es"}
+            componentRestrictions: { country: "es" },
           }}
         />
         <Button type="submit">Buscar</Button>
@@ -55,7 +56,9 @@ function Search() {
           Ver localización de todas las instituciones
         </div>
         <Button variant="secondary" hasLink>
-          <a href="/institutionsMap">Mapa</a>
+          <Link href="/institutionsMap">
+            <a>Mapa</a>
+          </Link>
         </Button>
       </div>
     </div>

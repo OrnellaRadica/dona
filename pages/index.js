@@ -4,53 +4,52 @@ import Search from "../components/Search";
 import classnames from "classnames";
 import CategoriesBlock from "../components/CategoriesBlock.js";
 import Image from "next/image";
-import martin from "../public/images/martin.jpg";
-import ornella from "../public/images/foto-or.jpg";
-import anna from "../public/images/foto-ac.jpg";
-import fatima from "../public/images/foto-fh.jpeg";
-
-const DEVS = [
-  {
-    name: "Ornella Radica",
-    image: ornella,
-    id: "ornella",
-  },
-  {
-    name: "Anna Cammarata",
-    image: anna,
-    id: "anna",
-  },
-  {
-    name: "Martín Adegbola",
-    image: martin,
-    id: "martin",
-  },
-  {
-    name: "Fátima Hardoy",
-    image: fatima,
-    id: "fatima",
-  },
-];
-
-const OBJS = [
-  {
-    name: "Hambre cero",
-    image: "/images/hambrecero.jpg",
-    id: "hambrecero",
-  },
-  {
-    name: "Comunidades y ciudades sostenibles",
-    image: "/images/cycsostenibles.jpg",
-    id: "comunidades",
-  },
-  {
-    name: "Producción y consumo responsables",
-    image: "/images/prodyconsresponsables.jpg",
-    id: "produccion",
-  },
-];
+import martin from "../public/images/martin.png";
+import ornella from "../public/images/ornella.png";
+import anna from "../public/images/anna.png";
+import fatima from "../public/images/fatima.png";
 
 function Home() {
+  const DEVS = [
+    {
+      name: "Ornella Radica",
+      image: ornella,
+      id: "ornella",
+    },
+    {
+      name: "Anna Cammarata",
+      image: anna,
+      id: "anna",
+    },
+    {
+      name: "Martín Adegbola",
+      image: martin,
+      id: "martin",
+    },
+    {
+      name: "Fátima Hardoy",
+      image: fatima,
+      id: "fatima",
+    },
+  ];
+
+  const OBJS = [
+    {
+      name: "Hambre cero",
+      image: "/images/hambrecero.jpg",
+      id: "hambrecero",
+    },
+    {
+      name: "Comunidades y ciudades sostenibles",
+      image: "/images/cycsostenibles.jpg",
+      id: "comunidades",
+    },
+    {
+      name: "Producción y consumo responsables",
+      image: "/images/prodyconsresponsables.jpg",
+      id: "produccion",
+    },
+  ];
   const container = classnames(
     "w-full md:w-1/2 flex items-center justify-center"
   );
