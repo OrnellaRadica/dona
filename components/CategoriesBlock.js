@@ -122,7 +122,9 @@ function CategoriesBlock() {
           Ver localización de todas las instituciones
         </div>
         <Button variant="secondary" hasLink>
-          <a href="/institutionsMap">Mapa</a>
+          <Link href="/institutionsMap">
+            <a>Mapa</a>
+          </Link>
         </Button>
       </div>
     </div>

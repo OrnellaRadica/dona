@@ -17,7 +17,7 @@ function Card({
   return (
     <div className="flex flex-col sm:flex-row w-full bg-white scroll-p-1 shadow-md rounded-lg overflow-hidden">
       <Link href={`/institution/${slug}`}>
-        <div className="w-full sm:max-h-[300px] sm:grid">
+        <a className="w-full sm:max-h-[300px] sm:grid">
           <Image
             width="100%"
             height="100%"
@@ -29,7 +29,7 @@ function Card({
               objectPosition: "center",
             }}
           />
-        </div>
+        </a>
       </Link>
       <div className="w-full p-4 flex flex-col justify-between gap-4">
         <div className="flex flex-col gap-2">

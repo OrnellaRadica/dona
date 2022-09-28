@@ -7,7 +7,6 @@ import Card from "../../components/Card";
 const API_URL =
   "https://z7d7c6145-z5b7a4427-gtw.z897bb54d.blockdev.sh/api/getAll/institutions";
 /*const API_URL = "http://localhost:3001/api/getAll/institutions";*/
-let receivedInstitutions = [];
 
 function Page({ category, institutions }) {
   return (
@@ -36,16 +35,13 @@ function Page({ category, institutions }) {
 }
 export default Page;
 
-const getInstitutions = () => {
+const getInstitutions = () =>
   fetch(API_URL)
     .then((response) => response.json())
+    .then((data) => data.data)
     .catch((error) => {
       console.log("Error", error);
-    })
-    .then((data) => {
-      receivedInstitutions = data.data;
     });
-};
 
 function createRandomKey() {
   return Math.random().toString(36).substring(2) + Date.now().toString(36);
@@ -65,6 +61,7 @@ export const getStaticPaths = () => {
 
 export const getStaticProps = async ({ params }) => {
   const category = params.category;
+  const receivedInstitutions = await getInstitutions();
   const institutions = receivedInstitutions.filter((institution) =>
     institution.categories.includes(category)
   );
@@ -75,5 +72,3 @@ export const getStaticProps = async ({ params }) => {
     },
   };
 };
-
-getInstitutions();

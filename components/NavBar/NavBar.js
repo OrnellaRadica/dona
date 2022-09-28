@@ -3,7 +3,7 @@ import Link from "next/link";
 import NavBarList from "../NavBar/NavBarList";
 import NavBarMenuHamburger from "../NavBar/NavBarMenuHamburger";
 
-function navBar() {
+function NavBar() {
   const [open, setOpen] = useState(false);
   const handleClick = () => {
     setOpen(!open);
@@ -26,4 +26,4 @@ function navBar() {
     </nav>
   );
 }
-export default navBar;
+export default NavBar;
