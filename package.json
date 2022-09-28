@@ -1,9 +1,7 @@
 {
-  "name": "docker_web_app",
+  "name": "dona",
   "version": "1.0.0",
   "private": true,
-  "description": "Node.js on Docker",
-  "author": "Martin Traore <ayofe08@gmail.com>",
   "main": "./pages/index.js",
   "scripts": {
     "dev": "next dev",
