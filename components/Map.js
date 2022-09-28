@@ -27,6 +27,7 @@ function Map({
       {typeMarker === "all" ? (
         institutions.map((institution) => (
           <Marker
+            key={institution.id}
             position={institution.direction}
             onClick={() => handleActiveMarker(institution.id)}
           >
