@@ -5,9 +5,9 @@ import Card from "../components/Card";
 {
   /* API DEL BACK-END */
 }
-const API_URL =
-  "https://z7d7c6145-z5b7a4427-gtw.z897bb54d.blockdev.sh/api/getAll/institutions";
-/*const API_URL = "http://localhost:3001/api/getAll/institutions";*/
+/*const API_URL =
+  "https://z7d7c6145-z5b7a4427-gtw.z897bb54d.blockdev.sh/api/getAll/institutions";*/
+const API_URL = "http://localhost:3001/api/getAll/institutions";
 
 function list({ institutions, address, institution }) {
   return (

@@ -8,12 +8,12 @@ import Map from "../../components/Map";
 {
   /* API DEL BACK-END */
 }
-const API_URL =
+/*const API_URL =
   "https://z7d7c6145-z5b7a4427-gtw.z897bb54d.blockdev.sh/api/getAll/institutions";
 const API_URL_SLUG = (slug) =>
-  `https://z7d7c6145-z5b7a4427-gtw.z897bb54d.blockdev.sh/api/getOne/${slug}`;
-/*const API_URL = "http://localhost:3001/api/getAll/institutions";
-const API_URL_SLUG = (slug) => `http://localhost:3001/api/getOne/${slug}`;*/
+  `https://z7d7c6145-z5b7a4427-gtw.z897bb54d.blockdev.sh/api/getOne/${slug}`;*/
+const API_URL = "http://localhost:3001/api/getAll/institutions";
+const API_URL_SLUG = (slug) => `http://localhost:3001/api/getOne/${slug}`;
 
 function Institution({ institutionData }) {
   const router = useRouter();
