@@ -4,16 +4,7 @@ import { useLoadScript } from "@react-google-maps/api";
 import NavBar from "../../components/NavBar/NavBar";
 import Button from "../../components/Button";
 import Map from "../../components/Map";
-
-{
-  /* API DEL BACK-END */
-}
-const API_URL =
-  "https://z7d7c6145-z5b7a4427-gtw.z897bb54d.blockdev.sh/api/getAll/institutions";
-const API_URL_SLUG = (slug) =>
-  `https://z7d7c6145-z5b7a4427-gtw.z897bb54d.blockdev.sh/api/getOne/${slug}`;
-/*const API_URL = "http://localhost:3001/api/getAll/institutions";
-const API_URL_SLUG = (slug) => `http://localhost:3001/api/getOne/${slug}`;*/
+import data from "../../data.json";
 
 function Institution({ institutionData }) {
   const router = useRouter();
@@ -128,19 +119,8 @@ function Institution({ institutionData }) {
 
 export default Institution;
 
-export const getStaticPaths = async () => {
-  const getInstitutions = () =>
-    fetch(API_URL)
-      .then((response) => response.json())
-      .catch((error) => {
-        console.log("Error", error);
-      })
-      .then((data) => {
-        return data.data;
-      });
-
-  const receivedInstitutions = await getInstitutions();
-  const institutionUrls = receivedInstitutions.map(
+export const getStaticPaths = () => {
+  const institutionUrls = data.map(
     (institution) => `/institution/${institution.slug}`
   );
 
@@ -150,19 +130,9 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = ({ params }) => {
   const slug = params.institution;
-  const url = API_URL_SLUG(slug);
-
-  const getInstitutionData = () =>
-    fetch(url)
-      .then((response) => response.json())
-      .catch((error) => {
-        console.log("Error", error);
-      })
-      .then((data) => data.data);
-
-  const institutionData = await getInstitutionData();
+  const institutionData = data.find((i) => i.slug === slug);
 
   if (!institutionData) {
     return {
